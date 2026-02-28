@@ -105,9 +105,9 @@ function reducer(state: AppState, action: AppAction): AppState {
       const visitedViews = uniqueViews([
         "lock-screen",
         ...(Array.isArray(payload.visitedViews)
-          ? payload.visitedViews.filter(isAppView)
-          : []),
-        ...(isUnlocked ? ["dashboard"] : []),
+            ? payload.visitedViews.filter(isAppView)
+            : []),
+        ...(isUnlocked ? (["dashboard"] as AppView[]) : []),
         activeView,
       ]);
 
